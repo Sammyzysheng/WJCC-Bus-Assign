@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Project Overview | WJCC-Bus-Assign</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Project Overview" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://sammyzysheng.github.io/WJCC-Bus-Assign/" />
+<meta property="og:url" content="https://sammyzysheng.github.io/WJCC-Bus-Assign/" />
+<meta property="og:site_name" content="WJCC-Bus-Assign" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"Project Overview","url":"https://sammyzysheng.github.io/WJCC-Bus-Assign/","name":"WJCC-Bus-Assign","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/WJCC-Bus-Assign/assets/css/style.css?v=7b54f23e9a50f94764e6d7d65b71074f197ab8e7">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="https://sammyzysheng.github.io/WJCC-Bus-Assign/">WJCC Bus Assign</a></h1>
+
+
+
+        <p></p>
+
+
+        <p class="view"><a href="https://github.com/Sammyzysheng/WJCC-Bus-Assign">View the Project on GitHub <small>Sammy Sheng/WJCC Bus Assign</small></a></p>
+        <img src="/WJCC-Bus-Assign/images/Bus.png"/>
+
+
+
+
+      </header>
+      <section>
+
+      <h2 id="project-overview">Project Overview</h2>
+
+<p>The Williamsburg-James City County (WJCC) school district serves the greater area of Williamsburg and is committed to ensuring every student has the means to attend school and receive an education. In order to achieve this, a great deal of time and effort is placed into carefully determining guidelines for successfully transporting students to and from their respective schools.</p>
+
+<p>This project aims to examine the current criteria for creating bus routes and seeks to propose new, more efficient routes, supported by model justification and analysis, via optimizing the assignment of stops to routes.</p>
+
+<h2 id="current-guidelines">Current Guidelines</h2>
+
+<ul>
+  <li>Students must arrive to school in the morning at least 10 minutes prior to the starting bell</li>
+  <li>Buses must account for 10 minutes in the afternoon while loading students from school</li>
+  <li>Each bus within a route can only serve one school at a time</li>
+  <li>High school and middle school buses have a capacity estimate of 54 students</li>
+  <li>Elementary school buses have a capacity estimate of 77 students</li>
+  <li>Routes must be completed in order of tier, starting with tier one and ending with tier three</li>
+</ul>
+
+<h2 id="results">Results</h2>
+
+<h3 id="routes-visualizaion">Routes Visualizaion</h3>
+<p><img src="/WJCC-Bus-Assign/images/Routes.JPG" alt="Route Maps" />
+<br />
+<a href="https://public.tableau.com/views/WJCCBusRouteMap/Dashboard1?:language=zh-Hans&amp;:display_count=y&amp;publish=yes&amp;:origin=viz_share_link">Click here to view my Tableau dashboard online</a></p>
+
+<h3 id="bus-capacities">Bus Capacities</h3>
+<p>There was a significant disparity between the capacity of the buses compared to how many students WJCC planned to pick up along a given route. This was particularly applicable to the middle and high schools. Those capacities are capped at 52 because older, growing children occupy more space than the younger elementary students. After filtering out some of the outliers, the average overbooked bus capacity was roughly 67 students. Increasing the bus capacity to 65 allowed the model to mirror WJCC’s expectation that not every student at a stop is going to actually ride the bus.</p>
+
+<h3 id="consistent-am-route-beginning-time">Consistent AM Route Beginning Time</h3>
+<p>There was a significant disparity between the capacity of the buses compared to how many students WJCC planned to pick up along a given route. This was particularly applicable to the middle and high schools. Those capacities are capped at 52 because older, growing children occupy more space than the younger elementary students. After filtering out some of the outliers, the average overbooked bus capacity was roughly 67 students. Increasing the bus capacity to 65 allowed the model to mirror WJCC’s expectation that not every student at a stop is going to actually ride the bus.</p>
+
+<h3 id="toano-middle-school-as-tier-2">Toano Middle School as Tier 2</h3>
+<p>A key takeaway was the possibility of designating Toano Middle School as a Tier 2 school, instead of being a Tier 1 school. When Toano was designated as a Tier 1 school, it functioned as a bottleneck and created more time between the start of subsequent routes. Additionally, Toano functioned best when another school was re-designated, such as when James River Elementary School was designated as a Tier 3 school. If Toano was left to function alone as a Tier 2 school without any other changes to the current list of school tiers, Toano would continue to act as a bottleneck but in a different tier. Therefore, another school must be designated to another tier in addition with Toano as Tier 2 to balance travel times between buses.
+Although Toano satisfied required constraints, the newly created schedule of routes required more buses, with larger numbers in the afternoon than the morning. The following table below indicates the required number of buses from both the initial data and model results, as well as factoring in the new schedule with Toano as Tier 2 and James River as Tier 3.</p>
+
+<h2 id="solution-explanation">Solution Explanation</h2>
+
+<p>When deciding upon a software to aid in the creation of a model, the following tools were investigated using Python programming language: Gurobi Optimizer, Google OR-Tools and heuristic methods. Gurobi was explored as an optimization tool for the current routes, but its use proved inconclusive as troubleshooting became difficult to work past. Model success was derived from the implementation of both Google OR-Tools and by applying heuristic algorithms. Google OR-Tools is open-source (freely available) and offers model equations to obtain solutions to optimization problems. Heuristics was used to minimize the distance between stops to acquire a greedy solution.</p>
+
+<p>The model reschedules stops and routes for each school using Google OR-Tools. Google OR-Tools allowed the capability of using multiple solution strategies for vehicle routing problems. The strategy incorporated within the model is the “PATH-CHEAPEST” strategy, which involves a top-down, greedy search method that starts from a route “start” node, and connects it to the node which produces the cheapest route. In addition, it also allows further considerations towards capacity constraints of buses based on the number of students in each stop. The routes of each school are optimized school-by-school, tier-by-tier, and keeps track of the buses. For modeling purposes, every available bus in each school was sent out, although some were not actually sent out to perform a run. After assigning each school, the available buses were updated at each depot or school. After completing a tier, the quantity of buses available was then reset for the following tier.</p>
+
+
+
+      </section>
+      <footer>
+
+        <p>This project is maintained by <a href="https://github.com/Sammyzysheng">Sammyzysheng</a></p>
+
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/WJCC-Bus-Assign/assets/js/scale.fix.js"></script>
+
+  </body>
+</html>
