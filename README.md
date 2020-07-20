@@ -1,6 +1,7 @@
 ## WJCC Bus Assign
 
 The Williamsburg-James City County (WJCC) school district serves the greater area of Williamsburg and is committed to ensuring every student has the means to attend school and receive an education. In order to achieve this, a great deal of time and effort is placed into carefully determining guidelines for successfully transporting students to and from their respective schools. 
+This project aims to examine the current criteria for creating bus routes and seeks to propose new, more efficient routes, supported by model justification and analysis, via optimizing the assignment of stops to routes. The discussion of this report will continue by further examining the data shared within the scope of the project, exploring the problem statement and needs set forth by WJCC, articulating methodology behind model development and summarizing concepts used to create models, elaborating on findings obtained from model implementation and concluding with actionable business insights derived from model findings.
 
 ## Current Guidelines
 
@@ -10,10 +11,6 @@ The Williamsburg-James City County (WJCC) school district serves the greater are
 - High school and middle school buses have a capacity estimate of 54 students
 - Elementary school buses have a capacity estimate of 77 students
 - Routes must be completed in order of tier, starting with tier one and ending with tier three
-
-## Project Overview
-
-This project aims to examine the current criteria for creating bus routes and seeks to propose new, more efficient routes, supported by model justification and analysis, via optimizing the assignment of stops to routes. The discussion of this report will continue by further examining the data shared within the scope of the project, exploring the problem statement and needs set forth by WJCC, articulating methodology behind model development and summarizing concepts used to create models, elaborating on findings obtained from model implementation and concluding with actionable business insights derived from model findings. 
 
 ## Results
 
