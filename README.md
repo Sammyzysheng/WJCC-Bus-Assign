@@ -15,7 +15,6 @@ This project aims to examine the current criteria for creating bus routes and se
 ## Results
 
 ### Routes Visualizaion
-XGBoost algorithm provided by AWS in a new Notebook Instance.
 ![Route Maps](images/Routes.JPG)
 <br/>
 [Click here to view my Tableau dashboard online](https://public.tableau.com/views/WJCCBusRouteMap/Dashboard1?:language=zh-Hans&:display_count=y&publish=yes&:origin=viz_share_link)
