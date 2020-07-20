@@ -24,7 +24,10 @@ The model reschedules stops and routes for each school using Google OR-Tools. Go
 ## Results
 
 ### Routes Visualizaion
-
+XGBoost algorithm provided by AWS in a new Notebook Instance.
+![Route Maps](images/Routes.JPG)
+<br/>
+[Click here to view my Tableau dashboard online](https://public.tableau.com/views/WJCCBusRouteMap/Dashboard1?:language=zh-Hans&:display_count=y&publish=yes&:origin=viz_share_link)
 
 ### Bus Capacities
 There was a significant disparity between the capacity of the buses compared to how many students WJCC planned to pick up along a given route. This was particularly applicable to the middle and high schools. Those capacities are capped at 52 because older, growing children occupy more space than the younger elementary students. After filtering out some of the outliers, the average overbooked bus capacity was roughly 67 students. Increasing the bus capacity to 65 allowed the model to mirror WJCC’s expectation that not every student at a stop is going to actually ride the bus.
